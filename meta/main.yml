@@ -1,6 +1,7 @@
 galaxy_info:
   author: Paweł Szczepaniak
   description: Role for setting Wizzy - CLI for managing Logstash
+  company: ''
 
   license: BSD
 
