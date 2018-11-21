@@ -1,0 +1,24 @@
+---
+
+- name: Install needed packages
+  apt:
+    name: npm
+    state: present
+
+- name: Create wizzy working directory
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - /usr/local/share/wizzy
+    - /usr/local/share/wizzy/conf
+
+- name: Install wizzy package
+  npm:
+    name: wizzy
+    path: /usr/local/share/wizzy
+
+- name: Create wizzy config file
+  template:
+    src: wizzy.json.j2
+    dest: /usr/local/share/wizzy/conf/wizzy.json
