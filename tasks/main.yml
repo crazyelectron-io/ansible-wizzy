@@ -1,9 +1,13 @@
 ---
 
+- include: install_older_nodejs.yml
+  when: ansible_distribution_release == 'stretch' or ansible_distribution_release == 'jessie'
+
 - name: Install needed packages
   apt:
-    name: npm
+    name: "{{ wizzy_npm_package }}"
     state: present
+  when: ansible_distribution_release != 'stretch' and ansible_distribution_release != 'jessie'
 
 - name: Create wizzy working directory
   file:

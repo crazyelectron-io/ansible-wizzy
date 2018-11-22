@@ -1,5 +1,6 @@
 ---
 
+wizzy_npm_package: npm
 wizzy_url: http://127.0.0.1:3000
 wizzy_username: admin
 wizzy_password: 123123
