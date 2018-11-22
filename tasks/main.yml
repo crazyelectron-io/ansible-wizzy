@@ -20,6 +20,7 @@
 - name: Install wizzy package
   npm:
     name: wizzy
+    global: yes
     path: /usr/local/share/wizzy
 
 - name: Create wizzy config file
